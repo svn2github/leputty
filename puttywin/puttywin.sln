@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "putty", "puttywin.vcproj", "{1E563C08-CBA4-4C6B-BC96-4BDD791D2513}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{1E563C08-CBA4-4C6B-BC96-4BDD791D2513}.Debug.ActiveCfg = Debug|Win32
+		{1E563C08-CBA4-4C6B-BC96-4BDD791D2513}.Debug.Build.0 = Debug|Win32
+		{1E563C08-CBA4-4C6B-BC96-4BDD791D2513}.Release.ActiveCfg = Release|Win32
+		{1E563C08-CBA4-4C6B-BC96-4BDD791D2513}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,145 @@
+10/03/2006
+* sync up with putty, includes:
+* fixed buffering problem causing rz/sz to hang after transmit
+* Support for Windows PuTTY connecting straight to a local serial port
+* ProxyCommand support
+* raw logging (on the wire)
+
+
+04/19/2006
+* performance improvement on redraw
+* minor bug fixes
+* fixed a buffer overflow when using SHA-256
+* new checkbox to inhibit pageant authentication
+* better RTF buffer support when copying into clipboard
+* fixes so that it works under Windows 64
+* configurable font quality
+11/18/2005
+* synced up with Putty
+* fixed a bug where remote ssh connections would hang
+09/28/2005
+* fixed crash reported by Shawn Behrens when login in with SSH 1 and a bad key phrase
+* selects matching config when typing in config list
+* various minor bug fixes
+06/20/2005
+* fixed: major bug in port forwarding code was truncating data from server causing all sorts of problems with svn/cvs checkouts
+* synced up with Putty
+05/03/2005
+* major ssh 1 bug fix that was causing packet corruption leading to loss of connection
+* ssh 1 improvements
+
+04/20/2005
+merged from Putty. Fixed misbehavior with packet size
+Enable arcfour256-draft-00
+
+03/28/2005
+merged from Putty. Mostly crashes.
+option for CJK handling.
+Annoying refresh should be fixed.
+
+01/31/2005
+merged main Putty trunk in ; among other things:
+* Support for falling back through the list of addresses returned from
+a DNS lookup, whether they're IPv4, v6 or a mixture of both.
+* Add a configuration option for TCP keepalives (SO_KEEPALIVE), default off.
+No very good reason, but I've occasionally wanted to frob it to see if it
+makes any difference to problems I'm having, and it was easy.
+* Allow reconfiguration of compression and cipher settings in
+mid-session in SSH2: this forces an immediate rekey to activate the
+new settings. I'm not sure exactly what this will be useful for
+* Support reconfiguration of key exchange in mid-session
+* SSH port forwarding is now configurable in mid-session. After doing
+Change Settings, the port forwarding setup function is run again,
+and tags all existing port forwardings as `do not keep'. Then it
+iterates through the config in the normal way; when it encounters a
+port forwarding which is already in the tree, it tags it `keep'
+rather than setting it up from scratch. Finally, it goes through the
+tree and removes any that haven't been labelled `keep'. Hence,
+editing the list of forwardings in Change Settings has the effect of
+cancelling any forwardings you remove, and adding any new ones.
+The SSH panel now appears in the reconfig box, and is empty apart
+from a message explaining that it has to be there for subpanels of
+it to exist. Better wording for this message would be welcome.
+
+10/26/2004
+* fix serious security hole which can allow a server to execute code of its choice on a PuTTY client connecting to it. In SSH2, the attack can be performed before host key verification, meaning that even if you trust the server you think you are connecting to, a different machine could be impersonating it and could launch the attack before you could tell the difference. We recommend everybody upgrade to 0.56 as soon as possible.
+* general fixes from Putty
+* Support the SSH-2 mechanism for sending signals to a running session
+* ability not to run a remote shell/command at all
+* lots of changes for unicode
+* new code for handling history
+09/24/2004
+* Malcolm Smith's patch to support CHAP (digest-based) authentication
+when talking to SOCKS 5 proxies. Configures itself transparently (if
+the proxy offers CHAP it will use it, otherwise it falls back to
+ordinary cleartext passwords).
+* `ampersat-in-username': tweak `strchr' to `strrchr' where necessary to
+consistently support usernames containing `@'.
+
+08/04/2004
+fixes a serious security hole which may allow a server to execute code of its choice on a PuTTY client connecting to it. In SSH2, the attack can be performed before host key verification, meaning that even if you trust the server you think you are connecting to, a different machine could be impersonating it and could launch the attack before you could tell the difference.
+synced with Putty
+
+03/01/2004
+Statically link to avoid dependency on visual .net runtime
+-------------------------------
+02/17/2004
+Synced up with Putty release 0.54
+Binaries now compiled with Visual Studio .net
+Increased zmodem buffer size for improved performance
+-------------------------------
+10/17/2003
+synced up with putty
+* winsock loaded dynamically (uses wisock 2 if possible)
+* fixed: winsock crash
+* faster printer detection under NT/2000/XP
+* default colors
+* wisock5 compatibility improved
+
+-------------------------------
+
+06/03/2003
+sync'ed up with putty some more
+Experimental change in the behaviour of `disable alternate terminal
+screen'
+fixes
+Async requests with pageant
+Dynamic port forwarding by means of a local SOCKS server.
+
+-------------------------------
+04/02/2003
+
+sync'ed up with putty (ui revamp merge)
+fix: port forwarding fix (ssh2)
+improvement: saves in scrollback better
+fix: old openssh (<2.3) compatibility
+
+-------------------------------
+02/10/2003
+
+sync'ed up with Putty
+
+-------------------------------
+01/07/2003
+
+sync'ed up with Putty
+Proxy end DNS lookup
+various cleanups & fixes
+
+-------------------------------
+12/16/2002
+
+Fix: font rendering under XP
+Fix: overrun problems
+Fix: refresh problem
+Fix: HTTP proxy
+Fix: SOCK5 proxy with IPv6
+and various code cleanup
+
+-------------------------------
+11/13/2002
+
+first release
+Added z-modem transfer support (needs to point to the righ sz/rz commands in the config).
+Added keep alive to plink (so that plink can be used for simple port forwarding).
+

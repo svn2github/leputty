@@ -1,0 +1,15 @@
+LePutty
+
+instructions for installing
+
+
+first, install LePutty the same way you would install Putty
+see http://www.chiark.greenend.org.uk/~sgtatham/putty/ for details
+
+then, you can unzip the lrsz package that is included in the binary
+archive, so that you can point to lz.exe and rz.exe in LePutty's
+configuration box (so that zmodem transfer works).
+
+For any other problems please refer to LePutty's home page at
+http://leputty.sourceforge.net
+
